@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
-diabetes_df = pd.read_csv('../data/diabetes_clean.csv')
+diabetes_df = pd.read_csv('../../data/diabetes_clean.csv')
 print(diabetes_df.head())
 
 X = diabetes_df.drop("glucose", axis=1).values
