@@ -36,7 +36,7 @@ plt.yticks([0, 2, 4, 6],
 plt.show()
 plt.clf()
 
-gap = pd.read_csv('../../data/cca_gapminder.csv')
+gap = pd.read_csv('../data/cca_gapminder.csv')
 
 pop2 = np.array([gap['population'].values])
 np_pop = (pop2 / 1000000) * 2

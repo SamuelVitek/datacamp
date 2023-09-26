@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 
-churn = pd.read_csv(r"/ml-scikit-learn/data/telecom_churn_clean.csv")
+churn = pd.read_csv(r"../../data/telecom_churn_clean.csv")
 
 X = churn[["total_day_charge", "total_eve_charge"]].values
 y = churn["churn"].values
