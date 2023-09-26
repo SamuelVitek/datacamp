@@ -45,5 +45,5 @@ print('\nSelect only second to fourth row\n', brics[1:4])
 print('\nUsing loc\n', brics.loc[['RU', 'IN'], ['country', 'capital']])
 print('\nUsing loc (all rows specific columns)\n', brics.loc[:, ['country', 'capital']])
 
-print('\nUsing iloc\n', brics.iloc[[0, 5], [0, 1]])
+print('\nUsing iloc\n', brics.iloc[[0, 4], [0, 1]])
 print('\nUsing iloc\n', brics.iloc[:, [0, 1]])
