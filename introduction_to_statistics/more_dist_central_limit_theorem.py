@@ -1,5 +1,5 @@
-import matplotlib.pyplot as plt
 from scipy.stats import norm, poisson, expon
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
@@ -8,10 +8,13 @@ amir_deals = pd.read_csv('../data/amir_deals.csv', index_col=0)
 amir_deals['amount'].hist(bins=10)
 plt.show()
 
-prob_under_7500 = norm.cdf(7500, amir_deals['amount'].mean(), amir_deals['amount'].std())
-prob_over_1000 = 1 - norm.cdf(1000, amir_deals['amount'].mean(), amir_deals['amount'].std())
-prob_3000_to_7000 = (norm.cdf(7000, amir_deals['amount'].mean(), amir_deals['amount'].std())
-                     - norm.cdf(3000, amir_deals['amount'].mean(), amir_deals['amount'].std()))
+deal_mean = amir_deals['amount'].mean()
+deal_std = amir_deals['amount'].std()
+
+prob_under_7500 = norm.cdf(7500, deal_mean, deal_std)
+prob_over_1000 = 1 - norm.cdf(1000, deal_mean, deal_std)
+prob_3000_to_7000 = (norm.cdf(7000, deal_mean, deal_std)
+                     - norm.cdf(3000, deal_mean, deal_std))
 print(prob_under_7500, prob_over_1000, prob_3000_to_7000)
 
 pct_25 = norm.ppf(0.25, 5000, 2000)
